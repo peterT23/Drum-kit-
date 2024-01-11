@@ -24,17 +24,19 @@
 
 window.addEventListener("keydown", (e) => {
   console.log("e", e);
-  console.log(e.which);
-  const audio = document.querySelector(`audio[data-key="${e.which}"]`);
+  console.log(e.keyCode);
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   // const audio2 = document.querySelector(
   //   `audio[src="/audio/drum-pack-clap-option.wav"]`
   // );
   // console.log("audio2", audio2);
   console.log("audio", audio);
-  const key = document.querySelector(`.key[data-key="${e.which}"]`);
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
   console.log("key", key);
   console.log("audio", audio);
   if (!audio) return;
+  audio.currentTime = 0;
+
   audio.play();
   key.classList.add("playing");
 });
