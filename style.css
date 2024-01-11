@@ -9,6 +9,9 @@ html {
   background-image: linear-gradient();
   height: 100vh;
 }
+body :first-child {
+  text-align: center;
+}
 .keys {
   height: 100vh;
   display: flex;
